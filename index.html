@@ -56,8 +56,8 @@
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h1 class="brand-heading">Public Transportation Mode Detection with Cellular Data</h1>
-              <p class="intro-text">a demo to show users' transfer mode.
-                <br>Created by Start Bootstrap.</p>
+              <p class="intro-text">CIKM 2017	
+                <br>Guanyao Li, Chun-Jie Chen, Sheng-Yun Huang, Ai-Jou Chou, Xiaochuan Gou, Wen-Chih Peng and Chih-Wei Yi.</p>
               <a href="#about" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
               </a>
@@ -68,18 +68,14 @@
     </header>
 
     <!-- About Section -->
-    <section id="about" class="content-section text-center">
+    <section id="about" class="content-section text-left">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Abstract</h2>
-            <p>This website is a demo of the paper. We hope to predict the user transfer mode by Cellular data.
-              <a href="http://startbootstrap.com/template-overviews/grayscale/">the preview page</a>. The theme is open source, and you can use it for any purpose, personal or commercial.</p>
-            <p>This theme features stock photos by
-              <a href="http://gratisography.com/">Gratisography</a>
-              along with a custom Google Maps skin courtesy of
-              <a href="http://snazzymaps.com/">Snazzy Maps</a>.</p>
-            <p>Grayscale includes full HTML, CSS, and custom JavaScript files along with SASS and LESS files for easy customization!</p>
+            <h2 class="text-center">Abstract</h2>
+            <p>Public transportation is essential in people's daily life and it is crucial to understand how people move around the city. Some prior works have exploited GPS, Wi-Fi or bluetooth to collect data, in which extra sensors or devices were needed. Other works uti-lized data from smart card systems. However, some public trans-portation systems have their own smart card system and the smart card data cannot include all kinds of transportation modes, which makes it unsuitable for our study. </p>
+            <p> Nowadays, each user has his own mobile phones and from the cellular data of mobile phone service providers, it is possible to know the users' transportation mode and fine-grained crowd flows. As such, given a set of cel-lular data, we propose a system for public transportation mode detection, crowd density estimation, and crowd flow estimation. </p>
+            <p> Note that we only have cellular data, noextra sensor data collected from users' mobile phones. Inthis paper, we refer to someexternal datasources(e.g., the bus routing networks) to identify transporta-tion modes. Users' cellulardata sometimes have uncertainty about user location information. Thus, we propose two approaches for differenttransportation mode detection considering the cell tower properties, spatial and temporal factors. We demonstrate our sys-tem using the data from Chunghwa Telecom, which is the largest telecommunicationcompany in Taiwan,to show the usefulnessof our system.</p>
           </div>
         </div>
       </div>
@@ -89,9 +85,12 @@
     <section id="download" class="download-section content-section text-center">
       <div class="container">
         <div class="col-lg-8 mx-auto">
-          <h2>Download Grayscale</h2>
-          <p>You can download Grayscale for free on the preview page at Start Bootstrap.</p>
-          <a href="http://startbootstrap.com/template-overviews/grayscale/" class="btn btn-default btn-lg">Visit Download Page</a>
+          <h2>Demo Show</h2>
+          <p>You can watch the demo for analysis with the result of prediction under four modes</p>
+          <a href="http://140.113.213.24:8050/tjminer/users/" class="btn btn-default btn-lg">User Mode</a>
+          <a href="http://140.113.213.24:8050/tjminer/users/" class="btn btn-default btn-lg">MRT Mode</a>
+          <a href="http://140.113.213.24:8050/tjminer/users/" class="btn btn-default btn-lg">Bus Mode</a>
+          <a href="http://140.113.213.24:8050/tjminer/users/" class="btn btn-default btn-lg">Rail Mode</a>
         </div>
       </div>
     </section>
@@ -101,19 +100,19 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-8 mx-auto">
-            <h2>Contact Start Bootstrap</h2>
+            <h2>Contact Us</h2>
             <p>Feel free to leave us a comment on the
               <a href="http://startbootstrap.com/template-overviews/grayscale/">Grayscale template overview page</a>
               on Start Bootstrap to give some feedback about this theme!</p>
             <ul class="list-inline banner-social-buttons">
               <li class="list-inline-item">
-                <a href="https://twitter.com/SBootstrap" class="btn btn-default btn-lg">
+                <a href="#" class="btn btn-default btn-lg">
                   <i class="fa fa-twitter fa-fw"></i>
                   <span class="network-name">Twitter</span>
                 </a>
               </li>
               <li class="list-inline-item">
-                <a href="https://github.com/BlackrockDigital/startbootstrap" class="btn btn-default btn-lg">
+                <a href="https://github.com/NCTU-ADSL-public/" class="btn btn-default btn-lg">
                   <i class="fa fa-github fa-fw"></i>
                   <span class="network-name">Github</span>
                 </a>
@@ -132,6 +131,19 @@
 
     <!-- Map Section -->
     <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 24.787, lng: 120.99745};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 19,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
 
     <!-- Footer -->
     <footer>
@@ -149,7 +161,7 @@
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB0K4CcePPJV9gG0_PvP7FS755DEw0MQyk&callback=initMap"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
